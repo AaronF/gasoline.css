@@ -1,0 +1,18 @@
+//Core
+@import "core/settings.scss";
+@import "core/tools.scss";
+@import "core/debug.scss";
+@import "core/reset";
+@import "core/grid";
+@import "core/typeography";
+@import "core/base";
+@import "core/ie";
+
+//Components
+@import "components/c.header";
+@import "components/c.forms";
+@import "components/c.buttons";
+@import "components/c.alerts";
+
+//Pages
+@import "pages/p.example";

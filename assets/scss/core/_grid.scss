@@ -1,0 +1,107 @@
+// Define Grid
+.container {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: map-get($breakpoints-spacing, 'xs');
+	padding-right: map-get($breakpoints-spacing, 'xs');
+	max-width: 100%;
+	@each $key, $bp in $breakpoints {
+		@if $key != xs {
+			@media (min-width: $bp){
+				max-width: $bp;
+				padding-left: map-get($breakpoints-spacing, $key);
+				padding-right: map-get($breakpoints-spacing, $key);
+			}
+		}
+	}
+
+	&--slim {
+		max-width: 1170px;
+	}
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -$grid-padding;
+	margin-right: -$grid-padding;
+}
+.align-items-start {
+	align-items: flex-start;
+}
+.align-items-center {
+	align-items: center;
+}
+.align-items-end {
+	align-items: flex-end;
+}
+.justify-items-start {
+	justify-content: flex-start;
+}
+.justify-items-center {
+	justify-content: center;
+}
+.justify-items-end {
+	justify-content: flex-start;
+}
+.col {
+	flex: 1 1 0%;
+	padding-left: $grid-padding;
+	padding-right: $grid-padding;
+}
+@for $i from 1 through $grid-size {
+	.col-#{$i} {
+		flex: 1 1 (100%/$grid-size * $i);
+		padding-left: $grid-padding;
+		padding-right: $grid-padding;
+		max-width: (100%/$grid-size * $i);
+	}
+}
+
+%column-defaults {
+	position: relative;
+	width: 100%;
+	padding-right: $grid-padding;
+	padding-left: $grid-padding;
+}
+@each $key, $bp in $breakpoints {
+	@for $i from 1 through $grid-size {
+		.col-#{$key}-#{$i} {
+			@extend %column-defaults;
+		}
+	}
+}
+
+@each $key, $bp in $breakpoints {
+	@media (min-width: $bp){
+		.col-#{$key} {
+			flex: 1 1 0%;
+			padding-left: $grid-padding;
+			padding-right: $grid-padding;
+			max-width: none;
+		}
+		@for $i from 1 through $grid-size {
+			.col-#{$key}-#{$i} {
+				flex: 1 1 (100%/$grid-size * $i);
+				padding-left: $grid-padding;
+				padding-right: $grid-padding;
+				max-width: (100%/$grid-size * $i);
+			}
+
+			.offset-#{$key}-#{$i} {
+				margin-left: (100%/$grid-size * $i);
+			}
+		}
+	}
+	@media (max-width: $bp - 1px){
+		.show-above--#{$key} {
+			display: none !important;
+		}
+	}
+	@media (min-width: $bp - 1px){
+		.show-below--#{$key} {
+			display: none !important;
+		}
+	}
+}

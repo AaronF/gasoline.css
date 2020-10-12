@@ -1,0 +1,32 @@
+.c-alert {
+	margin-bottom: 25px;
+	padding: 25px;
+	border-radius: 20px;
+	border: 1px solid color(grey);
+	p {
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+	&--success {
+		background-color: #d4edda;
+		border-color: #c3e6cb;
+		p {
+			color: #155724;
+		}
+	}
+	&--warning {
+		background-color: #fff3cd;
+		border-color: #ffeeba;
+		p {
+			color: #856404;
+		}
+	}
+	&--error {
+		background-color: #f8d7da;
+		border-color: #f5c6cb;
+		p {
+			color: #721c24;
+		}
+	}
+}

@@ -1,0 +1,91 @@
+.c-form {
+	h2,
+	h3,
+	h4 {
+		margin-bottom: 25px;
+	}
+	.form-group,
+	.form-check {
+		margin-bottom: 25px;
+	}
+	.form-group {
+		label {
+			display: block;
+			font-weight: 500;
+			color: color(grey);
+			margin-bottom: 10px;
+		}
+		.form-control {
+			display: block;
+			width: 100%;
+
+			&[type="text"],
+			&[type="email"],
+			&[type="tel"],
+			&[type="url"],
+			&[type="number"],
+			&[type="password"] {
+				padding: 13px 15px;
+				background: #FFFFFF;
+				border: 1px solid rgba(120,122,132,0.25);
+				border-radius: 5px;
+				font-size: rem(16);
+				color: color(grey);
+
+				&::placeholder {
+					color: rgba(120,122,132,0.50);
+				}
+
+				&:disabled,
+				&:read-only {
+					opacity: 0.8;
+					&:hover {
+						cursor: not-allowed;
+					}
+				}
+			}
+		}
+
+		select.form-control {
+			appearance: none;
+			position: relative;
+			padding: 13px 65px 13px 25px;
+			background: #FFFFFF;
+			border: 1px solid rgba(120,122,132,0.25);
+			border-radius: 5px;
+			font-size: em(16);
+			color: color(grey);
+
+			// background-image: url();
+			// background-size: 22px 13px;
+			// background-position: calc(100% - 25px) 50%;
+			// background-repeat: no-repeat;
+		}
+
+		.tip {
+			margin-top: 10px;
+			font-size: em(14);
+			span.label {
+				font-weight: 700;
+				margin-bottom: 7px;
+			}
+			p {
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	.form-check {
+		label {
+			font-weight: 500;
+			color: color(grey);
+			margin-bottom: 10px;
+		}
+	}
+
+	.c-button {
+		// margin-top: 25px;
+	}
+}

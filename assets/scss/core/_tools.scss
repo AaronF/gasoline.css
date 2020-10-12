@@ -1,0 +1,65 @@
+@mixin lhCrop($line-height) {
+	&::before {
+		content: '';
+		display: block;
+		height: 0;
+		width: 0;
+		margin-top: calc((1 - #{$line-height}) * 0.5em);
+	}
+}
+
+/**
+ * https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+ */
+@mixin word-wrap() {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-ms-word-break: break-all;
+	word-break: break-all;
+	word-break: break-word;
+	-ms-hyphens: auto;
+	-moz-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+}
+
+@mixin ellipsis() {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+/**
+ * Make something only visible to a screen reader
+ */
+@mixin sr-only(){
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+/**
+ * e.g. font-size: rem(20);
+ */
+@function rem($size){
+	$remSize: $size / $browser-context;
+	@return #{$remSize}rem;
+}
+
+/**
+ * e.g. font-size: em(20);
+ */
+@function em($pixels, $context: $browser-context){
+	@if (unitless($pixels)) {
+		$pixels: $pixels * 1px;
+	}
+
+	@if (unitless($context)) {
+		$context: $context * 1px;
+	}
+
+	@return $pixels / $context * 1em;
+}

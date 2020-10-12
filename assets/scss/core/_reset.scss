@@ -1,0 +1,40 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+html {
+	line-height: 1.15; /* 1 */
+	-webkit-text-size-adjust: 100%; /* 2 */
+}
+
+body {
+	margin: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+// button,
+// input,
+// select {
+// 	appearance: none;
+// 	border: none;
+// 	outline: none;
+// 	background: none;
+// }
+button {
+	&::-moz-focus-inner {
+		outline: none;
+	}
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
