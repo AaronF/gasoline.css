@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<title>gasoline.css</title>
 	<meta name="description" content="">
@@ -11,7 +12,13 @@
 	<link rel="stylesheet" href="assets/css/style.css?v=1.0">
 </head>
 <body>
+	<div class="ie-banner">
+		<h5>You are using an unsupported browser. Please <a href="https://browsehappy.com/" target="_blank">switch to a different browser</a> to get the best experience.</h5>
+	</div>
+
 	<div class="container">
+		<br><br>
+
 		<div class="row">
 			<div class="col">
 				<h1>This is a h1</h1>
@@ -23,6 +30,20 @@
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in laoreet diam. Nam sed leo sagittis, mattis nisl in, consectetur eros. Praesent eget facilisis erat, ut finibus erat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus et efficitur lacus, congue auctor nulla.</p>
 				
 				<p>Nullam eget sem sit amet nunc ultrices auctor a vitae augue. Duis quis egestas nibh, ut blandit enim. Pellentesque finibus tincidunt venenatis. Etiam laoreet risus diam, nec bibendum dolor venenatis eu. Fusce feugiat urna non enim ornare, mattis malesuada nulla euismod. Etiam convallis accumsan ornare. Nunc commodo tristique elit sed pharetra.</p>
+			</div>
+		</div>
+
+		<br><br>
+
+		<div class="row">
+			<div class="col">
+				<h3>Responsive test (resize your browser)</h3>
+				<p class="show-below--xs">I appear below <code>$xs</code>!</p>
+				<p class="show-below--sm">I appear below <code>$sm</code>!</p>
+				<p class="show-below--md">I appear below <code>$md</code>!</p>
+				<p class="show-below--lg">I appear below <code>$lg</code>!</p>
+				<p class="show-below--xl">I appear below <code>$xl</code>!</p>
+				<p>I'm always here 👋</p>
 			</div>
 		</div>
 
@@ -49,6 +70,7 @@
 				<button class="c-button">Button!</button>
 				<button class="c-button">...and another one!</button>
 				<button class="c-button" disabled>Disabled Button!</button>
+				<button class="c-button open-modal" data-target="example_modal">This one opens a modal!</button>
 			</div>
 		</div>
 
@@ -92,6 +114,34 @@
 				</form>
 			</div>
 		</div>
+
+		<br><br>
 	</div>
+
+	<div class="ie-modal">
+		<div class="modal-content">
+			<div class="modal-content__inner">
+				<h1>This browser is not supported</h1>
+				<p>You are not using a supported browser, please switch to a modern browser to get the best experience.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="c-modal" id="example_modal">
+		<div class="c-modal__overlay"></div>
+		<div class="c-modal__content">
+			<div class="c-modal__content__title">
+				<h2>This is a modal!</h2>
+				<button class="c-modal__close"><span class="sr-only">Close</span></button>
+			</div>
+	
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a blandit mi, at tristique nunc. Praesent justo leo, feugiat ut rhoncus eget, pharetra non ligula. Mauris vulputate ante pharetra, fermentum magna vitae, gravida turpis. Sed ac ex hendrerit, porttitor ante viverra, feugiat nibh. Curabitur ante risus, aliquam nec neque laoreet, ornare porttitor purus. In hac habitasse platea dictumst. Sed venenatis est id sollicitudin facilisis. Etiam a nisi sed lectus tempor facilisis. Sed ac metus eu arcu vulputate ullamcorper. Morbi venenatis mi et lacus semper laoreet. Phasellus molestie eros a ipsum dignissim condimentum. Praesent arcu nulla, luctus id vestibulum a, mattis vitae tortor.</p>
+	
+			<p>Donec convallis vel mauris id elementum. Maecenas faucibus ut elit ac lobortis. Aliquam nec varius metus. Sed auctor ornare ante, vel sollicitudin quam hendrerit pulvinar. Duis facilisis odio eu nisl venenatis dictum eu et purus. Donec purus augue, condimentum hendrerit ultricies eget, tincidunt non est. Quisque sit amet leo dolor. Aliquam id mi vestibulum, pharetra ex sit amet, semper dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec id ornare lorem. Nam porta, neque mollis condimentum bibendum, turpis ipsum rutrum orci, non interdum odio augue eget massa. Fusce at orci quis elit accumsan mollis vel eu lacus. Nullam feugiat mi massa, et ullamcorper ipsum suscipit vitae.</p>
+		</div>
+	</div>
+
+	<script src="./assets/js/min/main.min.js" type="text/javascript"></script>
+	<script src="./assets/js/min/c-modal.min.js" type="text/javascript"></script>
 </body>
 </html>

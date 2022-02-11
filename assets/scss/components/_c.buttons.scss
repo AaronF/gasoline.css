@@ -10,7 +10,7 @@
 	margin: 0 15px;
 
 	//Default styles
-	background-color: color(orange, dark);
+	background-color: var(--orange-dark);
 	color: #ffffff;
 
 	&:hover {
@@ -30,7 +30,7 @@
 		margin-right: 0;
 	}
 
-	@media (max-width: $md - 1px){
+	@media (max-width: ($md - 1px)){
 		padding: 13px 25px;
 	}
 }

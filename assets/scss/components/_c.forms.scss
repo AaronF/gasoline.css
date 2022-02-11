@@ -12,7 +12,7 @@
 		label {
 			display: block;
 			font-weight: 500;
-			color: color(grey);
+			color: var(--grey);
 			margin-bottom: 10px;
 		}
 		.form-control {
@@ -30,7 +30,7 @@
 				border: 1px solid rgba(120,122,132,0.25);
 				border-radius: 5px;
 				font-size: rem(16);
-				color: color(grey);
+				color: var(--grey);
 
 				&::placeholder {
 					color: rgba(120,122,132,0.50);
@@ -54,7 +54,7 @@
 			border: 1px solid rgba(120,122,132,0.25);
 			border-radius: 5px;
 			font-size: em(16);
-			color: color(grey);
+			color: var(--grey);
 
 			// background-image: url();
 			// background-size: 22px 13px;
@@ -80,7 +80,7 @@
 	.form-check {
 		label {
 			font-weight: 500;
-			color: color(grey);
+			color: var(--grey);
 			margin-bottom: 10px;
 		}
 	}

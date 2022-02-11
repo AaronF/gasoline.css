@@ -45,7 +45,7 @@
  * e.g. font-size: rem(20);
  */
 @function rem($size){
-	$remSize: $size / $browser-context;
+	$remSize: calc($size / $browser-context);
 	@return #{$remSize}rem;
 }
 
@@ -54,12 +54,12 @@
  */
 @function em($pixels, $context: $browser-context){
 	@if (unitless($pixels)) {
-		$pixels: $pixels * 1px;
+		$pixels: calc($pixels * 1px);
 	}
 
 	@if (unitless($context)) {
-		$context: $context * 1px;
+		$context: calc($context * 1px);
 	}
 
-	@return $pixels / $context * 1em;
+	@return calc(($pixels / $context) * 1em);
 }
