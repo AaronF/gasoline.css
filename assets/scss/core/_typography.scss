@@ -3,7 +3,7 @@ body {
 	font-size: $global-font-size;
 	font-weight: 400;
 	line-height: rem(20);
-	color: color(grey);
+	color: var(--grey);
 }
 
 h1,
@@ -13,7 +13,7 @@ h4,
 h5,
 h6 {
 	font-weight: 800;
-	color: color(orange);
+	color: var(--orange);
 	line-height: 1em; // i.e. 100%
 	margin-bottom: rem(5);
 
@@ -41,29 +41,29 @@ h6 {
 	font-size: rem(18);
 }
 
-@media (max-width: $md - 1px){
+@media (max-width: ($md - 1px)){
 	h1 {
-		font-size: em(30);
+		font-size: rem(30);
 	}
 	h2 {
-		font-size: em(25);
+		font-size: rem(25);
 	}
 	h3 {
-		font-size: em(20);
+		font-size: rem(20);
 	}
 	h4 {
-		font-size: em(18);
+		font-size: rem(18);
 	}
 	h5 {
-		font-size: em(16);
+		font-size: rem(16);
 	}
 	h6 {
-		font-size: em(16);
+		font-size: rem(16);
 	}
 }
 
 p {
-	color: color(grey);
+	color: var(--grey);
 	margin-bottom: 1em;
 	a {
 		text-decoration: underline;
@@ -71,7 +71,7 @@ p {
 }
 
 a {
-	color: color(orange);
+	color: var(--orange);
 }
 
 ol,
@@ -79,9 +79,13 @@ ul {
 	margin-bottom: 1em;
 	li {
 		list-style-position: inside;
-		color: color(grey);
+		color: var(--grey);
 		margin-bottom: 5px;
 	}
+}
+
+code {
+	color: red;
 }
 
 //Screen reader only text

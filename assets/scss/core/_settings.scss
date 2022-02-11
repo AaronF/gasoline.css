@@ -12,13 +12,15 @@ $config: (
 $grid-size: 12;
 $grid-padding: 15px;
 
-$xs: 0px;
+$xxs: 0px;
+$xs: 560px;
 $sm: 768px;
 $md: 1024px;
 $lg: 1200px;
 $xl: 1396px;
 // $xxl: 1600px;
 $breakpoints: (
+	xxs: $xxs,
 	xs: $xs,
 	sm: $sm,
 	md: $md,
@@ -26,6 +28,7 @@ $breakpoints: (
 	xl: $xl
 );
 $breakpoints-spacing: (
+	xxs: $grid-padding,
 	xs: $grid-padding,
 	sm: $grid-padding,
 	md: $grid-padding,
@@ -39,17 +42,12 @@ $browser-context: 16;
 
 $fa-font-path: "../node_modules/@fortawesome/fontawesome-free/webfonts";
 
-//Colours
-$colors: (
-	orange: (
-		base: #FFB63D,
-		dark: #F96600
-	),
-	grey: (
-		base: #666666,
-		dark: #313131
-	)
-);
-@function color($color, $tone: 'base') {
-	@return map-get(map-get($colors, $color), $tone);
+// Colours
+:root {
+	// Main
+	--orange: #FFB63D;
+	--orange-dark: #F96600;
+	--grey: #666666;
+	--grey-light: #f0f0f0;
+	--grey-dark: #313131;
 }

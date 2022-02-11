@@ -3,11 +3,11 @@
 	width: 100%;
 	margin-right: auto;
 	margin-left: auto;
-	padding-left: map-get($breakpoints-spacing, 'xs');
-	padding-right: map-get($breakpoints-spacing, 'xs');
+	padding-left: map-get($breakpoints-spacing, 'xxs');
+	padding-right: map-get($breakpoints-spacing, 'xxs');
 	max-width: 100%;
 	@each $key, $bp in $breakpoints {
-		@if $key != xs {
+		@if $key != xxs {
 			@media (min-width: $bp){
 				max-width: $bp;
 				padding-left: map-get($breakpoints-spacing, $key);
@@ -19,6 +19,15 @@
 	&--slim {
 		max-width: 1170px;
 	}
+}
+
+.container-fluid {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: map-get($breakpoints-spacing, 'xs');
+	padding-right: map-get($breakpoints-spacing, 'xs');
+	max-width: 100%;
 }
 
 .row {
@@ -52,10 +61,10 @@
 }
 @for $i from 1 through $grid-size {
 	.col-#{$i} {
-		flex: 1 1 (100%/$grid-size * $i);
+		flex: 1 1 calc((100%/$grid-size) * $i);
 		padding-left: $grid-padding;
 		padding-right: $grid-padding;
-		max-width: (100%/$grid-size * $i);
+		max-width: calc((100%/$grid-size) * $i);
 	}
 }
 
@@ -83,25 +92,28 @@
 		}
 		@for $i from 1 through $grid-size {
 			.col-#{$key}-#{$i} {
-				flex: 1 1 (100%/$grid-size * $i);
+				flex: 1 1 calc((100%/$grid-size) * $i);
 				padding-left: $grid-padding;
 				padding-right: $grid-padding;
-				max-width: (100%/$grid-size * $i);
+				max-width: calc((100%/$grid-size) * $i);
 			}
 
 			.offset-#{$key}-#{$i} {
-				margin-left: (100%/$grid-size * $i);
+				margin-left: calc((100%/$grid-size) * $i);
 			}
 		}
 	}
-	@media (max-width: $bp - 1px){
-		.show-above--#{$key} {
-			display: none !important;
+
+	@if $bp != 0px {
+		@media (max-width: ($bp - 1px)){
+			.show-above--#{$key} {
+				display: none !important;
+			}
 		}
-	}
-	@media (min-width: $bp - 1px){
-		.show-below--#{$key} {
-			display: none !important;
+		@media (min-width: ($bp - 1px)){
+			.show-below--#{$key} {
+				display: none !important;
+			}
 		}
 	}
 }

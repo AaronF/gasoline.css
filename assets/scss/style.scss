@@ -8,11 +8,19 @@
 @import "core/base";
 @import "core/ie";
 
+//FA
+// @import "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+// @import "../node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
+// @import "../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+// @import "../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+
 //Components
 @import "components/c.header";
+@import "components/c.footer";
 @import "components/c.forms";
 @import "components/c.buttons";
 @import "components/c.alerts";
+@import "components/c.modal";
 
 //Pages
 @import "pages/p.example";

@@ -1,0 +1,45 @@
+{
+  "name": "gasoline-css",
+  "version": "2.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build-js": "babel js --out-dir js/min --out-file-extension .min.js",
+    "watch-js": "babel js --out-dir js/min --out-file-extension .min.js --watch",
+    "build-css": "sass scss:css --style compressed && postcss css/*.css --replace --use autoprefixer --map",
+    "watch-css": "sass scss:css -w",
+    "build": "concurrently \"npm run build-js\" \"npm run build-css\"",
+    "watch": "concurrently \"npm run watch-js\" \"npm run watch-css\""
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "babel": {
+    "ignore": [
+      "**/*.min.js"
+    ],
+    "comments": false,
+    "presets": [
+      [
+        "minify",
+        {
+          "keepClassName": true,
+          "builtIns": false
+        }
+      ]
+    ]
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "autoprefixer": "^10.3.1",
+    "babel-preset-minify": "^0.5.1",
+    "concurrently": "^6.0.0",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
+    "sass": "^1.44.0"
+  }
+}
